@@ -3,4 +3,7 @@ class AdminUsersController < ApplicationController
   end
   def home
   end
+  def show
+    @admin_user = AdminUser.find(params[:id])
+  end
 end
