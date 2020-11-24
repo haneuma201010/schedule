@@ -1,2 +1,32 @@
-<h1>AdminUsers#new</h1>
-<p>Find me in app/views/admin_users/new.html.erb</p>
+<!----管理者用ページ--->
+
+
+<h1>管理者用　Sign up</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3"> <!--なんでoffset3なのに真ん中に来ないのか-->
+    <%= form_with(model: @admin_user, local: true) do |f| %> <!--@admin_userに名前、メールアドレス、パスワードを渡す。コントローラへ-->
+                                                              <!--ボタン押すとcreateアクションへ飛ぶ。どういうこと？？-->
+      <%= f.label :name, "名前" %>
+      <div class="form-group">
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      
+      <%= f.label :email, "メールアドレス" %>
+      <div class="form-group">
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+      
+      <%= f.label :password, "パスワード" %>
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      
+      <%= f.label :password_confirmation, "パスワード（確認）" %>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+      
+      <%= f.submit "作成", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
