@@ -6,7 +6,7 @@ class AdminUsersController < ApplicationController
     @amdin_user = AdminUser.new(admin_user_params)  # (params[:admin_user])　これは完璧でない実装だけど・・・
                                                     # paramsの:admin_userってどこで定義してる？？
     if @admin_user.save # 保存が成功したら
-    
+                        # saveがnoメソッドエラーなんで？
     else # 保存できないならnewに戻る
       render 'new'
     end
