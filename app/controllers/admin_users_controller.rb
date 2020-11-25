@@ -3,10 +3,11 @@ class AdminUsersController < ApplicationController
     @admin_user = AdminUser.new
   end
   def create
-    @amdin_user = AdminUser.new(admin_user_params)  # (params[:admin_user])　これは完璧でない実装だけど・・・
+    @admin_user = AdminUser.new(admin_user_params)  # (params[:admin_user]) これは完璧でない実装だけど・・・
                                                     # paramsの:admin_userってどこで定義してる？？
     if @admin_user.save # 保存が成功したら
-                        # saveがnoメソッドエラーなんで？
+      flash[:success] = "ユーザー登録成功！！おめでとう！！"
+      redirect_to @admin_user
     else # 保存できないならnewに戻る
       render 'new'
     end
