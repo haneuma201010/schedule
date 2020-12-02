@@ -5,6 +5,7 @@ class AdminUser < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                      format: { with: VALID_EMAIL_REGEX },
                      uniqueness: { case_sensitive: false } # case_sensitiveは大文字小文字関係なく同じメールアドレスとしてみなす。
+                     
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 } # , allow_nil: true
 end
