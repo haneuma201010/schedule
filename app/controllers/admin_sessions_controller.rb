@@ -13,4 +13,5 @@ class AdminSessionsController < ApplicationController
       render 'new'
     end
   end
+  # destroy アクションを作る。まだ未実装
 end

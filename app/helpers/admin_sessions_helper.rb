@@ -7,6 +7,18 @@ module AdminSessionsHelper
     # session変数
   end
   
+  # 現在ログイン中のユーザーを返す（いる場合）
+  def current_admin_user
+    if session[:admin_user_id]
+      @current_admin_user ||= AdminUser.find_by(id: session[:admin_user_id]) # @current_admin_user = @current_admin_user || AdminUser.find_by(id: admin_user_id)
+                                                                             # @current_admin_userに値がなにもないときのみAdminUserに問い合わせる
+      # インスタンス変数は値を保持するために使っている
+    end
+  end
   
+  # ユーザーがログインしていればtrue、その他ならfalseを返す
+  def admin_logged_in?
+    !current_admin_user.nil?
+  end
   
 end
