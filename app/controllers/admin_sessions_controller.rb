@@ -13,5 +13,9 @@ class AdminSessionsController < ApplicationController
       render 'new'
     end
   end
-  # destroy アクションを作る。まだ未実装
+  
+  def destroy
+    admin_log_out
+    redirect_to root_url
+  end
 end

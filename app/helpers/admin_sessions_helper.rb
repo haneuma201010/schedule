@@ -21,4 +21,9 @@ module AdminSessionsHelper
     !current_admin_user.nil?
   end
   
+  # 現在のユーザーをログアウトする
+  def admin_log_out
+    session.delete(:admin_user_id)
+    @current_admin_user = nil
+  end
 end
