@@ -7,5 +7,5 @@ class AdminUser < ApplicationRecord
                      uniqueness: { case_sensitive: false } # case_sensitiveは大文字小文字関係なく同じメールアドレスとしてみなす。
                      
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 } # , allow_nil: true
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 end

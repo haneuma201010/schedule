@@ -15,6 +15,10 @@ module AdminSessionsHelper
       # インスタンス変数は値を保持するために使っている
     end
   end
+  # 渡されたユーザーがカレントユーザーであればtrueを返す
+  def current_admin_user?(admin_user)
+    admin_user && admin_user == current_admin_user
+  end
   
   # ユーザーがログインしていればtrue、その他ならfalseを返す
   def admin_logged_in?
