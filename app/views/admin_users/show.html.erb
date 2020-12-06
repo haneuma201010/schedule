@@ -2,5 +2,6 @@
     <%= @admin_user.name %>
   </h1>
   <p>
-    <%= link_to "ユーザー削除", admin_user_path, method: :delete,　data: { confirm: "本当に削除しますか？" } %>
+    <%= link_to "ユーザー削除", @admin_user, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <%= link_to "delete", @admin_user, method: :delete, data: { confirm: "You sure?" } %>
   </p>
