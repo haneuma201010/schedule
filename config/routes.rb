@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'school_users/home'
   root to: 'admin_users#home'
   
   get    '/admin_login',   to: 'admin_sessions#new'

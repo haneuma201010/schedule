@@ -2,6 +2,9 @@ class AdminUsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   
+  def index
+    @admin_users = AdminUser.all
+  end
   def new
     @admin_user = AdminUser.new
   end
