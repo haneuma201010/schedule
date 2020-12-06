@@ -1,0 +1,6 @@
+  <h1>
+    <%= @school_user.name %>｜<%= @school_user.email %>
+  </h1>
+  <p>
+    <%= link_to "教室情報削除", @school_user, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  </p>

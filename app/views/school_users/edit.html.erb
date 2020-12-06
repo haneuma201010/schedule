@@ -1,12 +1,12 @@
 
-<h1>プロフィールの更新</h1>
+<h1>教室情報の更新</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @admin_user, local: true) do |f| %> <!--controller内のeditの@admin_userを最初からフォーム内に入力してある-->
-      <%= render 'shared/admin_error_messages' %>
+    <%= form_with(model: @school_user, local: true) do |f| %> <!--controller内のeditの@admin_userを最初からフォーム内に入力してある-->
+      <%= render 'shared/school_error_messages' %>
 
-      <%= f.label :name, "名前" %>
+      <%= f.label :name, "教室名" %>
       <div class="form-group">
         <%= f.text_field :name, class: 'form-control' %>
       </div>
