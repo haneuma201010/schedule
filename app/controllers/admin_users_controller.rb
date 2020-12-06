@@ -1,5 +1,5 @@
 class AdminUsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   
   def new
@@ -33,6 +33,12 @@ class AdminUsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    AdminUser.find(params[:id]).destroy
+    flash[:success] = "ユーザーを削除しました"
+    redirect_to root_url
   end
 
   
