@@ -17,10 +17,11 @@
           <li><%= link_to "登録生徒一覧", student_users_path %></li>
           <li><%= link_to "生徒情報", current_student_user %></li>
           <li><%= link_to "生徒情報編集", edit_student_user_path(current_student_user) %></li>
-          <li><%= link_to "生徒Log out", student_logout_path, method: :delete %></li>
+          <li><%= link_to "生徒Log out", logout_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "管理者用Log in", admin_login_path %></li>
           <li><%= link_to "教室用Log in", school_login_path %></li>
+          <li><%= link_to "生徒用Log in", login_path %></li>
         <% end %>
       </ul>
     </nav>

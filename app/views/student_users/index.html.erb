@@ -1,0 +1,9 @@
+<h1>登録生徒一覧</h1>
+
+<ul>
+  <% @student_users.each do |student| %>
+    <li>
+      <%= link_to student.name, student %>
+    </li>
+  <% end %>
+</ul>
