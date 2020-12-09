@@ -18,10 +18,16 @@
           <li><%= link_to "生徒情報", current_student_user %></li>
           <li><%= link_to "生徒情報編集", edit_student_user_path(current_student_user) %></li>
           <li><%= link_to "生徒Log out", logout_path, method: :delete %></li>
+        <% elsif teacher_logged_in? %>
+          <li><%= link_to "登録講師一覧", teacher_users_path %></li>
+          <li><%= link_to "講師情報", current_teacher_user %></li>
+          <li><%= link_to "講師情報編集", edit_teacher_user_path(current_teacher_user) %></li>
+          <li><%= link_to "講師Log out", teacher_logout_path, method: :delete %></li>
         <% else %>
+          <li><%= link_to "生徒用Log in", login_path %></li>
           <li><%= link_to "管理者用Log in", admin_login_path %></li>
           <li><%= link_to "教室用Log in", school_login_path %></li>
-          <li><%= link_to "生徒用Log in", login_path %></li>
+          <li><%= link_to "講師用Log in", teacher_login_path %></li>
         <% end %>
       </ul>
     </nav>

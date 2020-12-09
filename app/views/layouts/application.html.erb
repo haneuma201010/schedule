@@ -18,9 +18,10 @@
       <% end %>
       <%= yield %>
     </div>
+    <p><%= link_to "student_userのサインアップページ", new_student_user_path %></p>
     <p><%= link_to "admin_userのサインアップページ", new_admin_user_path %></p>
     <p><%= link_to "school_userのサインアップページ", new_school_user_path %></p>
-    <p><%= link_to "student_userのサインアップページ", new_student_user_path %></p>
+    <p><%= link_to "techer_userのサインアップページ", new_teacher_user_path %></p>
     <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

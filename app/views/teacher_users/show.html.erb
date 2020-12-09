@@ -1,0 +1,6 @@
+  <h1>
+    <%= @teacher_user.name %>｜<%= @teacher_user.email %>
+  </h1>
+  <p>
+    <%= link_to "講師情報削除", @teacher_user, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  </p>
